@@ -26,9 +26,8 @@ class ContactHelper:
                 firstname=cells[1].text
                 lastname=cells[2].text
                 id=cells[0].find_element_by_tag_name("input").get_attribute("value")
-                all_phones=cells[5].text.splitlines()
-                self.contact_cache.append(Contanct(firstname=firstname,lastname=lastname,id=id,homephone=all_phones[0],mobilephone=all_phones[1],workphone=all_phones[2],
-                                                   secondaryphone=all_phones[3]))
+                all_phones=cells[5].text
+                self.contact_cache.append(Contanct(firstname=firstname,lastname=lastname,id=id,all_phones_from_home_page=all_phones))
         return  list(self.contact_cache)
 
 
